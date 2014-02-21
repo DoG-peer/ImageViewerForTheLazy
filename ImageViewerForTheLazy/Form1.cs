@@ -47,6 +47,7 @@ namespace ImageViewerForTheLazy
                 this.Location = new Point(screen_x - x, screen_y - y - 40);
                 this.Visible = true;
                 picShowFlag = 0;
+                timer1.Interval = int.Parse(ConfigurationManager.AppSettings["TimeLimitShow"]);
             }
             else
             {
@@ -59,6 +60,8 @@ namespace ImageViewerForTheLazy
                     this.Visible = false;
                 }
                 picShowFlag++;
+                timer1.Interval = int.Parse(ConfigurationManager.AppSettings["TimeLimitHide"]);
+            
             }
         }
 
